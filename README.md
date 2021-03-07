@@ -11,7 +11,7 @@ Develop C++ code to read, write, and play audio .wav file <br />
 * Libraries/Packages Used:
   * SDL
   * FFmpeg
-  * 
+
 Develop C++ code to display audio in time domain (waveform) and frequency domain (Spetrogram) <br />
 * Libraries/Packages Used:
   * Matplotlib (C++ wrapper)
