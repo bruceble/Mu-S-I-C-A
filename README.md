@@ -8,7 +8,7 @@ My learning goals for this project can be categorized as broad topic goals, tech
 
 ## Phase I
 Develop C++ code to read, write, and play audio .wav file <br />
-Libraries/Packages Used:
-* SDL
-* FFmpeg
+* Libraries/Packages Used:
+  * SDL
+  * FFmpeg
 
