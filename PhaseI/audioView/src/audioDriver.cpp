@@ -8,7 +8,7 @@ int main(int argc, const char * argv[]){
 	{
         std::cout << "Usage Instructions here:" << std::endl;
         std::cout << "Default audio used  ..." << std::endl;
-        filename = "../src/res/audio/theOfficeTheme.wav";
+        filename = "../src/res/audio/it.wav";
 	}
   else
   {
