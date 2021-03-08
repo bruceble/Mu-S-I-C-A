@@ -62,10 +62,10 @@ RM = /snap/cmake/805/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bruce/MUSICA/tutorials/audioView
+CMAKE_SOURCE_DIR = /home/bruce/Mu.S.I.C.A./PhaseI/audioView
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bruce/MUSICA/tutorials/audioView/build
+CMAKE_BINARY_DIR = /home/bruce/Mu.S.I.C.A./PhaseI/audioView/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/AudioView.dir/depend.make
@@ -78,29 +78,29 @@ include CMakeFiles/AudioView.dir/flags.make
 
 CMakeFiles/AudioView.dir/src/audioDriver.cpp.o: CMakeFiles/AudioView.dir/flags.make
 CMakeFiles/AudioView.dir/src/audioDriver.cpp.o: ../src/audioDriver.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bruce/MUSICA/tutorials/audioView/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/AudioView.dir/src/audioDriver.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AudioView.dir/src/audioDriver.cpp.o -c /home/bruce/MUSICA/tutorials/audioView/src/audioDriver.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bruce/Mu.S.I.C.A./PhaseI/audioView/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/AudioView.dir/src/audioDriver.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AudioView.dir/src/audioDriver.cpp.o -c /home/bruce/Mu.S.I.C.A./PhaseI/audioView/src/audioDriver.cpp
 
 CMakeFiles/AudioView.dir/src/audioDriver.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AudioView.dir/src/audioDriver.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bruce/MUSICA/tutorials/audioView/src/audioDriver.cpp > CMakeFiles/AudioView.dir/src/audioDriver.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bruce/Mu.S.I.C.A./PhaseI/audioView/src/audioDriver.cpp > CMakeFiles/AudioView.dir/src/audioDriver.cpp.i
 
 CMakeFiles/AudioView.dir/src/audioDriver.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AudioView.dir/src/audioDriver.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bruce/MUSICA/tutorials/audioView/src/audioDriver.cpp -o CMakeFiles/AudioView.dir/src/audioDriver.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bruce/Mu.S.I.C.A./PhaseI/audioView/src/audioDriver.cpp -o CMakeFiles/AudioView.dir/src/audioDriver.cpp.s
 
 CMakeFiles/AudioView.dir/src/AudioView.cpp.o: CMakeFiles/AudioView.dir/flags.make
 CMakeFiles/AudioView.dir/src/AudioView.cpp.o: ../src/AudioView.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bruce/MUSICA/tutorials/audioView/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/AudioView.dir/src/AudioView.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AudioView.dir/src/AudioView.cpp.o -c /home/bruce/MUSICA/tutorials/audioView/src/AudioView.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bruce/Mu.S.I.C.A./PhaseI/audioView/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/AudioView.dir/src/AudioView.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AudioView.dir/src/AudioView.cpp.o -c /home/bruce/Mu.S.I.C.A./PhaseI/audioView/src/AudioView.cpp
 
 CMakeFiles/AudioView.dir/src/AudioView.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AudioView.dir/src/AudioView.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bruce/MUSICA/tutorials/audioView/src/AudioView.cpp > CMakeFiles/AudioView.dir/src/AudioView.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bruce/Mu.S.I.C.A./PhaseI/audioView/src/AudioView.cpp > CMakeFiles/AudioView.dir/src/AudioView.cpp.i
 
 CMakeFiles/AudioView.dir/src/AudioView.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AudioView.dir/src/AudioView.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bruce/MUSICA/tutorials/audioView/src/AudioView.cpp -o CMakeFiles/AudioView.dir/src/AudioView.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bruce/Mu.S.I.C.A./PhaseI/audioView/src/AudioView.cpp -o CMakeFiles/AudioView.dir/src/AudioView.cpp.s
 
 # Object files for target AudioView
 AudioView_OBJECTS = \
@@ -156,7 +156,7 @@ AudioView: /usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.3.2.0
 AudioView: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.3.2.0
 AudioView: /usr/lib/x86_64-linux-gnu/libopencv_core.so.3.2.0
 AudioView: CMakeFiles/AudioView.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bruce/MUSICA/tutorials/audioView/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable AudioView"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bruce/Mu.S.I.C.A./PhaseI/audioView/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable AudioView"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AudioView.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -169,6 +169,6 @@ CMakeFiles/AudioView.dir/clean:
 .PHONY : CMakeFiles/AudioView.dir/clean
 
 CMakeFiles/AudioView.dir/depend:
-	cd /home/bruce/MUSICA/tutorials/audioView/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bruce/MUSICA/tutorials/audioView /home/bruce/MUSICA/tutorials/audioView /home/bruce/MUSICA/tutorials/audioView/build /home/bruce/MUSICA/tutorials/audioView/build /home/bruce/MUSICA/tutorials/audioView/build/CMakeFiles/AudioView.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/bruce/Mu.S.I.C.A./PhaseI/audioView/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bruce/Mu.S.I.C.A./PhaseI/audioView /home/bruce/Mu.S.I.C.A./PhaseI/audioView /home/bruce/Mu.S.I.C.A./PhaseI/audioView/build /home/bruce/Mu.S.I.C.A./PhaseI/audioView/build /home/bruce/Mu.S.I.C.A./PhaseI/audioView/build/CMakeFiles/AudioView.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/AudioView.dir/depend
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/bruce/MUSICA/tutorials/audioView
+# Install script for directory: /home/bruce/Mu.S.I.C.A./PhaseI/audioView
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/bruce/MUSICA/tutorials/audioView/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/bruce/Mu.S.I.C.A./PhaseI/audioView/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

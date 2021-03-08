@@ -7,14 +7,15 @@ int main(int argc, const char * argv[]){
   if(argc==1)
 	{
         std::cout << "Usage Instructions here:" << std::endl;
-        std::cout << "Default audio used..." << std::endl;
-        filename = "../src/res/audio/trombone.wav";
+        std::cout << "Default audio used  ..." << std::endl;
+        filename = "../src/res/audio/theOfficeTheme.wav";
 	}
   else
   {
         filename = argv[1];
   }
 
+  std::cout << filename << std::endl;
   AudioView AView;
   AView.read(filename);
   // AView.play(filename);

@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/bruce/MUSICA/tutorials/audioView/src/AudioView.cpp" "/home/bruce/MUSICA/tutorials/audioView/build/CMakeFiles/AudioView.dir/src/AudioView.cpp.o"
-  "/home/bruce/MUSICA/tutorials/audioView/src/audioDriver.cpp" "/home/bruce/MUSICA/tutorials/audioView/build/CMakeFiles/AudioView.dir/src/audioDriver.cpp.o"
+  "/home/bruce/Mu.S.I.C.A./PhaseI/audioView/src/AudioView.cpp" "/home/bruce/Mu.S.I.C.A./PhaseI/audioView/build/CMakeFiles/AudioView.dir/src/AudioView.cpp.o"
+  "/home/bruce/Mu.S.I.C.A./PhaseI/audioView/src/audioDriver.cpp" "/home/bruce/Mu.S.I.C.A./PhaseI/audioView/build/CMakeFiles/AudioView.dir/src/audioDriver.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
