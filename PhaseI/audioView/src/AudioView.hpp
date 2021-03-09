@@ -60,6 +60,7 @@ class AudioView{
     std::string filename_in;
     int audio_length = 0;
     int spect_count = 0;
+    int pixel_scale = 1;
 
     void DFT(std::vector<double> &y, int t_idx);
     void hanningWindow(std::vector<double> &y);
