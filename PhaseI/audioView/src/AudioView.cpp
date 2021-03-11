@@ -13,7 +13,7 @@
 
 #include "../src/AudioView.hpp"
 
-#include "opencv2/core.hpp" // spect 
+#include "opencv2/core.hpp" // spect
 #include "opencv2/imgproc.hpp"
 #include "opencv2/imgcodecs.hpp"
 #include "opencv2/highgui.hpp"
@@ -183,9 +183,9 @@ void AudioView::DFT(std::vector<double> &y, int t_idx){
   int wsz = spect.data[t_idx].magnitude.size();
 
   for (int i = 0;i<wsz;i++){ // insert magnitudes as column for each transform count
-    for(int j=0;j<pixel_scale;j++){
-      for(int k=0;k<pixel_scale;k++){
-        spect.dft_frequency.at<double>(pixel_scale*(wsz-i-1)+j,pixel_scale*t_idx+k) = spect.data[t_idx].magnitude.at(i);
+    for(int j=0;j<pixel_scale_freq;j++){
+      for(int k=0;k<pixel_scale_time;k++){
+        spect.dft_frequency.at<double>(pixel_scale_freq*(wsz-i-1)+j,pixel_scale_time*t_idx+k) = spect.data[t_idx].magnitude.at(i);
         spect_count++; // track dft frequency data point
         if(spect.data[t_idx].magnitude.at(i) > spect.max_magnitude) spect.max_magnitude = spect.data[t_idx].magnitude.at(i); // track maximum magnitude
       }
@@ -222,17 +222,18 @@ void AudioView::colorize(){
       cv::namedWindow("Spectrograph", cv::WINDOW_NORMAL);
       cv::resizeWindow("Spectrograph", img_color.size().width, img_color.size().height);
       cv::imshow("Spectrograph", img_color);
+      cv::imwrite("spectrograph.png", img_color);
       cv::waitKey(0);
 }
 
 void AudioView::displaySpectrograph(int windowSize){
-    int N = 8192/4; // sample freq
+    int N = 8192*2; // sample freq
     int segment_overlap = 192;
     std::vector<double> y = waveform.amplitude;
     std::vector<double> windowSamples;
 
     spect.transform_count = y.size()/(windowSize - segment_overlap);
-    spect.dft_frequency = cv::Mat(pixel_scale*N/2, pixel_scale*spect.transform_count, CV_64FC1, 0.0); // scale matrix by pixel_scale for better visibility of freq bins
+    spect.dft_frequency = cv::Mat(pixel_scale_freq*N/2, pixel_scale_time*spect.transform_count, CV_64FC1, 0.0); // scale matrix by pixel_scale for better visibility of freq bins
 
     // iterators:
     int t_idx = 0;

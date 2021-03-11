@@ -71,7 +71,7 @@ int main(int argc, const char * argv[]){
         }
         if (opt.find("s") != std::string::npos) {
           if(!isRead) AView.read(filename);
-          AView.displaySpectrograph(812);
+          AView.displaySpectrograph(812/2);
           optTrigger = true;
         }
         if(!optTrigger) displayOptions(true);
