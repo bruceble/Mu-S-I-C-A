@@ -1,0 +1,30 @@
+Check if mlpack works, with all dependencies:
+
+  $ wget https://www.mlpack.org/files/mlpack-3.4.2.tar.gz
+  $ tar -xvzpf mlpack-3.4.2.tar.gz
+  $ mkdir mlpack-3.4.2/build && cd mlpack-3.4.2/build
+  $ cmake ../
+  $ make -j4  # The -j is the number of cores you want to use for a build.
+  $ sudo make install
+
+  (NOTE: wget link invalid --- UPDATE: line works now)
+
+
+Set env var for lib path:
+
+  $ export LD_LIBRARY_PATH=/usr/local/lib
+
+
+Dependencies:
+
+    Armadillo >= 8.400.0 (with LAPACK support)
+    Boost (math_c99, serialization, unit_test_framework, heap, spirit) >= 1.58
+    ensmallen >= 2.10.0 (will be downloaded if not found)
+
+    (INSTALL:)
+
+    $ sudo apt-get install libboost-math-dev libboost-test-dev libboost-serialization-dev
+    $ sudo apt-get install libarmadillo-dev binutils-dev python3-pandas python3-numpy cython3 python3-setuptools
+    $ sudo apt-get install libmlpack-dev mlpack-bin
+
+    (NOTE: also installed mlpack-bin)
