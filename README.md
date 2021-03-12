@@ -19,7 +19,7 @@ Develop C++ code to display audio in time domain (waveform) and frequency domain
 
 ## Phase II (in progress...)
 Tested mlpack machine learning library with its dependencies and cmake <br />
-*Libraries/Packages Used
+* Libraries/Packages Used
   * mlpack
   * Armadillo
 
