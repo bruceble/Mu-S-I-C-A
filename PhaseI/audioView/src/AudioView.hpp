@@ -60,7 +60,7 @@ class AudioView{
     std::string filename_in;
     int audio_length = 0;
     int spect_count = 0;
-    int pixel_scale_time = 10; // stretch horizontal
+    int pixel_scale_time = 1; // stretch horizontal
     int pixel_scale_freq = 1;
 
     void DFT(std::vector<double> &y, int t_idx);
