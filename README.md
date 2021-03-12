@@ -18,8 +18,15 @@ Develop C++ code to display audio in time domain (waveform) and frequency domain
   * OpenCV
 
 ## Phase II (in progress...)
+Tested mlpack machine learning library with its dependencies and cmake
+*Libraries/Packages Used
+  * mlpack
+  * Armadillo
+
 CNN to perform vocal isolation <br />
 * Libraries/Packages Used:
   * Opencv
-  * 
+  * mlpack
+    * armadillo
+ 
 
