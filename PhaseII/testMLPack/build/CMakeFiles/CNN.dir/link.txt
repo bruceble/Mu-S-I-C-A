@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/CNN.dir/src/convolutionalNN.cpp.o -o CNN  -lmlpack /usr/lib/libarmadillo.so 

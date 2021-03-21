@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/bruce/Mu.S.I.C.A./PhaseII/testMLPack/src/convolutionalNN.cpp
+mlpack/core.hpp
+-
+mlpack/core/data/split_data.hpp
+-
+mlpack/methods/ann/layer/layer.hpp
+-
+mlpack/methods/ann/ffn.hpp
+-
+ensmallen.hpp
+-
+

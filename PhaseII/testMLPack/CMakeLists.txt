@@ -30,3 +30,7 @@ include_directories(${ARMADILLO_INCLUDE_DIRS})
 add_executable(test src/test.cpp)
 target_link_libraries(test mlpack)
 target_link_libraries(test ${ARMADILLO_LIBRARIES})
+
+add_executable(CNN src/convolutionalNN.cpp)
+target_link_libraries(CNN mlpack)
+target_link_libraries(CNN ${ARMADILLO_LIBRARIES})

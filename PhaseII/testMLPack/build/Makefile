@@ -142,6 +142,46 @@ test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
 .PHONY : test/fast
 
+#=============================================================================
+# Target rules for targets named CNN
+
+# Build rule for target.
+CNN: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CNN
+.PHONY : CNN
+
+# fast build rule for target.
+CNN/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CNN.dir/build.make CMakeFiles/CNN.dir/build
+.PHONY : CNN/fast
+
+src/convolutionalNN.o: src/convolutionalNN.cpp.o
+
+.PHONY : src/convolutionalNN.o
+
+# target to build an object file
+src/convolutionalNN.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CNN.dir/build.make CMakeFiles/CNN.dir/src/convolutionalNN.cpp.o
+.PHONY : src/convolutionalNN.cpp.o
+
+src/convolutionalNN.i: src/convolutionalNN.cpp.i
+
+.PHONY : src/convolutionalNN.i
+
+# target to preprocess a source file
+src/convolutionalNN.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CNN.dir/build.make CMakeFiles/CNN.dir/src/convolutionalNN.cpp.i
+.PHONY : src/convolutionalNN.cpp.i
+
+src/convolutionalNN.s: src/convolutionalNN.cpp.s
+
+.PHONY : src/convolutionalNN.s
+
+# target to generate assembly for a file
+src/convolutionalNN.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CNN.dir/build.make CMakeFiles/CNN.dir/src/convolutionalNN.cpp.s
+.PHONY : src/convolutionalNN.cpp.s
+
 src/test.o: src/test.cpp.o
 
 .PHONY : src/test.o
@@ -177,7 +217,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... CNN"
 	@echo "... test"
+	@echo "... src/convolutionalNN.o"
+	@echo "... src/convolutionalNN.i"
+	@echo "... src/convolutionalNN.s"
 	@echo "... src/test.o"
 	@echo "... src/test.i"
 	@echo "... src/test.s"

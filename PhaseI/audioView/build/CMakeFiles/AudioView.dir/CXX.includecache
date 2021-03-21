@@ -70,14 +70,6 @@ opencv2/highgui.hpp
 opencv2/core/mat.hpp
 /home/bruce/Mu.S.I.C.A./PhaseI/audioView/src/opencv2/core/mat.hpp
 
-/home/bruce/Mu.S.I.C.A./PhaseI/audioView/src/audioDriver.cpp
-iostream
--
-string
--
-../src/AudioView.hpp
-/home/bruce/Mu.S.I.C.A./PhaseI/audioView/src/AudioView.hpp
-
 /home/bruce/matplotlib-cpp/matplotlibcpp.h
 Python.h
 -
