@@ -1,4 +1,0 @@
-/home/bruce/Mu.S.I.C.A./PhaseII/testMLPack/build/CMakeFiles/rebuild_cache.dir
-/home/bruce/Mu.S.I.C.A./PhaseII/testMLPack/build/CMakeFiles/test.dir
-/home/bruce/Mu.S.I.C.A./PhaseII/testMLPack/build/CMakeFiles/edit_cache.dir
-/home/bruce/Mu.S.I.C.A./PhaseII/testMLPack/build/CMakeFiles/CNN.dir

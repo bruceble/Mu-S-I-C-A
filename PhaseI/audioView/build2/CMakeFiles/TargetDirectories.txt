@@ -1,3 +1,0 @@
-/home/bruce/Mu.S.I.C.A./PhaseI/audioView/build/CMakeFiles/rebuild_cache.dir
-/home/bruce/Mu.S.I.C.A./PhaseI/audioView/build/CMakeFiles/AudioView.dir
-/home/bruce/Mu.S.I.C.A./PhaseI/audioView/build/CMakeFiles/edit_cache.dir
