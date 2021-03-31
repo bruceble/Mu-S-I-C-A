@@ -227,7 +227,7 @@ void AudioView::colorize(){
 }
 
 void AudioView::calculateSpectrograph(int windowSize){
-    int N = 8192*2; // sample freq
+    int N = 512*2; // sample freq
     int segment_overlap = 192;
     std::vector<double> y = waveform.amplitude;
     std::vector<double> windowSamples;
@@ -269,7 +269,7 @@ void AudioView::calculateSpectrograph(int windowSize){
 }
 
 void AudioView::calculateSpectrograph(int windowSize, std::vector<double> mixedAmplitude){
-    int N = 8192*2; // sample freq
+    int N = 512*2; // sample freq
     int segment_overlap = 192;
     std::vector<double> y = mixedAmplitude;
     std::vector<double> windowSamples;
