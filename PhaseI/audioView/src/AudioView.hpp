@@ -90,6 +90,13 @@ class AudioView{
     /* Method to display audio in time domain */
     void plotWaveform();
 
+
+    /* Method to calculate audio to spectrograph */
+    void calculateSpectrograph(int windowSize);
+
+    /* Overloaded Method to calculate audio to spectrograph given audio*/
+    void calculateSpectrograph(int windowSize, std::vector<double> mixedAmplitude);
+
     /* Method to display audio as spectrograph */
     void displaySpectrograph(int windowSize);
 
@@ -98,4 +105,10 @@ class AudioView{
 
     /* Method to save audio spectrograph */
     void saveSpectrograph();
+
+    /* Method to reset spectrograph */
+    void resetSpectrograph();
+
+    /* Method to reformat and access spectral data */
+    std::vector<std::vector<float>> getSpectralData();
 };

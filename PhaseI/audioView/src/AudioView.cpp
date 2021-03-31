@@ -226,7 +226,7 @@ void AudioView::colorize(){
       cv::waitKey(0);
 }
 
-void AudioView::displaySpectrograph(int windowSize){
+void AudioView::calculateSpectrograph(int windowSize){
     int N = 8192*2; // sample freq
     int segment_overlap = 192;
     std::vector<double> y = waveform.amplitude;
@@ -266,9 +266,73 @@ void AudioView::displaySpectrograph(int windowSize){
 
       t_idx++;
     } // end of transform count loop
+}
 
+void AudioView::calculateSpectrograph(int windowSize, std::vector<double> mixedAmplitude){
+    int N = 8192*2; // sample freq
+    int segment_overlap = 192;
+    std::vector<double> y = mixedAmplitude;
+    std::vector<double> windowSamples;
+
+    spect.transform_count = y.size()/(windowSize - segment_overlap);
+    spect.dft_frequency = cv::Mat(pixel_scale_freq*N/2, pixel_scale_time*spect.transform_count, CV_64FC1, 0.0); // scale matrix by pixel_scale for better visibility of freq bins
+
+    // iterators:
+    int t_idx = 0;
+    int w_idx = 0;
+
+    /* pad end of y samples set so last window is not undersized (possible change: padd windowSize/2 before y and windowSize/2 after y) */
+    while(w_idx<windowSize){ // only padding the end
+      y.push_back(0);
+      w_idx++;
+    }
+
+    w_idx = 0; // reset
+
+    while(t_idx<spect.transform_count){ // iterate through data set performing DFT's
+      spect.data.push_back(TransformData()); // push new TransformData struct to spect.data
+
+      for(int i = 0; i<windowSize; i++){ // isolate data for transform
+        windowSamples.push_back( y.at(w_idx) );
+        w_idx++;
+      }
+
+      w_idx -= segment_overlap; // moves idx back to start of overlap for next segment
+
+      spect.data[t_idx].amplitude = windowSamples; // store current transform window's samples to spect amplitude data at element transform index [t_idx]
+      hanningWindow(windowSamples);
+      zeroPadding(windowSamples,N);
+      DFT(windowSamples,t_idx); // the DFT function will store resulting DFT magnitudes to corresponding data index for magnitude member
+
+      windowSamples.clear(); // reset vector for next iteration
+
+      t_idx++;
+    } // end of transform count loop
+}
+
+void AudioView::displaySpectrograph(int windowSize){
+    calculateSpectrograph(windowSize);
     colorize();
 }
 
 void AudioView::saveWaveform(){}
 void AudioView::saveSpectrograph(){}
+
+void AudioView::resetSpectrograph(){
+  cv::Mat resetMat;
+  spect.dft_frequency = resetMat;
+}
+
+std::vector<std::vector<float>> AudioView::getSpectralData(){
+  std::vector<std::vector<float>> data;
+  int rows = spect.dft_frequency.size().height;
+  int cols = spect.dft_frequency.size().width;
+  data.resize(rows, std::vector<float>(cols,0));
+
+  for(int r=0;r<rows;r++){
+    for(int c=0;c<cols;c++){
+      data[r][c] = spect.dft_frequency.at<double>(r,c);
+    }
+  }
+  return data;
+}
