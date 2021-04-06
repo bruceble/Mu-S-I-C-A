@@ -83,6 +83,7 @@ class AudioView{
 
     /* Method to write audio file to new file */
     void write(const char * filename_in, float damp_ratio);
+    void write(std::vector<double> input_audio, std::string fname);
 
     /* Method to play audio file */
     void play(const char * filename_in);
@@ -93,9 +94,7 @@ class AudioView{
 
     /* Method to calculate audio to spectrograph */
     void calculateSpectrograph(int windowSize);
-
-    /* Overloaded Method to calculate audio to spectrograph given audio*/
-    void calculateSpectrograph(int windowSize, std::vector<double> mixedAmplitude);
+    void calculateSpectrograph(int windowSize, std::vector<double> mixedAmplitude); // input audio vector
 
     /* Method to display audio as spectrograph */
     void displaySpectrograph(int windowSize);
@@ -104,7 +103,10 @@ class AudioView{
     void saveWaveform();
 
     /* Method to save audio spectrograph */
-    void saveSpectrograph();
+    void saveSpectrograph(std::string filename);
+
+    /* Method to save animated spectrograph */
+    void animateSpectrograph(std::string filename);
 
     /* Method to reset spectrograph */
     void resetSpectrograph();

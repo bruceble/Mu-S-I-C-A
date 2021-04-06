@@ -14,6 +14,7 @@
 #include "../src/AudioView.hpp"
 
 #include "opencv2/core.hpp" // spect
+#include "opencv2/videoio.hpp"
 #include "opencv2/imgproc.hpp"
 #include "opencv2/imgcodecs.hpp"
 #include "opencv2/highgui.hpp"
@@ -76,6 +77,23 @@ void AudioView::write(const char * filename_in, float damp_ratio){
   pipe_out = popen("ffmpeg -y -f s16le -ar 44100 -ac 1 -i - out.wav", "w"); // -f forces format to sint16 long-endian -ar sets rate to 44100 Hz, -ac (1 channel), -i filename
   for(int i=0;i<audio_length;i++){
       sample = audio_amplitude.at(i)*damp_ratio; // use damp ratio = 1 for not change
+      fwrite(&sample, 2, 1, pipe_out);
+  }
+  pclose(pipe_out);
+}
+
+/* implement ffmpeg to write file -- overload for input audio vector*/
+void AudioView::write(std::vector<double> input_audio, std::string fname){
+  FILE *pipe_out;
+  int16_t sample;
+
+  char phrase_out[50];
+  sprintf(phrase_out, "ffmpeg -y -f s16le -ar 44100 -ac 1 -i - %s.wav", fname.c_str()); // using -ac 2 adds reflected data...
+
+
+  pipe_out = popen(phrase_out, "w"); // -f forces format to sint16 long-endian -ar sets rate to 44100 Hz, -ac (1 channel), -i filename
+  for(int i=0;i<input_audio.size();i++){
+      sample = input_audio.at(i);
       fwrite(&sample, 2, 1, pipe_out);
   }
   pclose(pipe_out);
@@ -196,7 +214,19 @@ void AudioView::DFT(std::vector<double> &y, int t_idx){
 
 /* apply hanning window to time domain amplitude data */
 void AudioView::hanningWindow(std::vector<double> &y){
-    //
+  // int N = y.size();
+  // double alpha = 0.5;
+  // double pi = 3.1415926;
+  // std::vector<double> w;
+  // double wn;
+  //
+  //
+  // for(int i = 0;i<N;i++){
+  //   wn = (double) alpha*(1-cos(2*pi*i/N)); // window function
+  //   w.push_back(wn);
+  //   y.at(i) = y.at(i)*w.at(i);
+  // }
+
 }
 
 
@@ -316,10 +346,83 @@ void AudioView::displaySpectrograph(int windowSize){
 }
 
 void AudioView::saveWaveform(){}
-void AudioView::saveSpectrograph(){}
+
+void AudioView::saveSpectrograph(std::string filename){
+  std::string fmt = ".png";
+  std::string outName = filename+fmt;
+  cv::Mat img_color;
+  cv::Mat img_in = spect.dft_frequency;
+
+  img_in.convertTo(img_in, CV_8UC1); // (MATRIX, TARGET DATA TYPE)
+  cv::applyColorMap(img_in, img_color, 9); // (ORIGINAL MATRIX, COLORED MATRIX, OPENCV COLOR OPTION)
+  cv::imwrite(outName, img_color);
+}
+
+void AudioView::animateSpectrograph(std::string filename){
+  std::string fmt = ".avi";
+  std::string outName = filename+fmt;
+  cv::Mat img_color;
+  cv::Mat img_in = spect.dft_frequency;
+  cv::Mat frame;
+
+  int frameHeight = 512;
+  int stride = frameHeight/16*9; // USE THIS FOR SLOWER VIEW
+  stride = frameHeight*1280/720; // THIS FRAME SIZE WORKS WELL WITH SEEING BIG PICTURE AT REAL SPEED
+
+  frame = cv::Mat(frameHeight, stride, CV_8UC3, 0.0);
+
+  img_in.convertTo(img_in, CV_8UC3); // (MATRIX, TARGET DATA TYPE)
+  cv::applyColorMap(img_in, img_color, 9); // (ORIGINAL MATRIX, COLORED MATRIX, OPENCV COLOR OPTION)
+
+  int rows = spect.dft_frequency.size().height;
+  int cols = spect.dft_frequency.size().width;
+
+  cv::VideoWriter video;
+  int codec = cv::VideoWriter::fourcc('M','J','P','G');
+  double fps = 30/5;
+
+  std::cout << "Opening video writer" << std::endl;
+
+  video.open(outName, codec, fps, frame.size(), true);
+
+  int p = 0;
+  int p2 = stride;
+  int pct;
+  cv::Mat cropped;
+
+  std::cout << "Started writing: " << outName << std::endl;
+  // cv::Rect = cropRegion(0,0,stride,frameHeight);
+  while(p2 < cols){
+    // pHalf = (p2-p)/2;
+    // std::cout << p << ": " <<  animated.size() << " " << rows << " " << (p2-1-p) << std::endl;
+    // for(int r=0;r<rows;r++){
+    //   for(int c=p;c<p2;c++){
+    //     animated.at<double>(r,c-p) = img_color.at<double>(r,c);
+    //     // std::cout << r << " " << c-p << std::endl;
+    //     // if(c<(p+50) && c>=(p)) animated.at<double>(r,c) = 0;
+    //     // std::cout << c << ", " << p << std::endl;
+    //   }
+    //   // std::cout << r << std::endl;
+    // }
+
+    // pct = 100*p2/cols;
+    // if(pct%10 == 0)
+    // std::cout << outName <<  << " % complete..." << std::endl;
+
+    cropped = img_color(cv::Rect(p,0,stride,frameHeight));
+    // std::cout << 0 << " " << p2-p << " | " << p << " " << p2 << " " << cols << std::endl;
+    video.write(cropped);
+    p+=20;
+    p2+=20;
+  }
+  // video.release();
+  return;
+
+}
 
 void AudioView::resetSpectrograph(){
   cv::Mat resetMat;
+
   spect.dft_frequency = resetMat;
 }
 
