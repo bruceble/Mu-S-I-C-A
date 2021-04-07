@@ -44,7 +44,7 @@ AudioView::~AudioView(){
 /* implement ffmpeg to read + store file */
 void AudioView::read(const char * filename_in){
     FILE *pipe_in;
-    char phrase_in[50];
+    char phrase_in[100];
     int16_t sample;
     int count;
     double amp_i;
@@ -214,18 +214,18 @@ void AudioView::DFT(std::vector<double> &y, int t_idx){
 
 /* apply hanning window to time domain amplitude data */
 void AudioView::hanningWindow(std::vector<double> &y){
-  // int N = y.size();
-  // double alpha = 0.5;
-  // double pi = 3.1415926;
-  // std::vector<double> w;
-  // double wn;
-  //
-  //
-  // for(int i = 0;i<N;i++){
-  //   wn = (double) alpha*(1-cos(2*pi*i/N)); // window function
-  //   w.push_back(wn);
-  //   y.at(i) = y.at(i)*w.at(i);
-  // }
+  int N = y.size();
+  double alpha = 0.5;
+  double pi = 3.1415926;
+  std::vector<double> w;
+  double wn;
+
+
+  for(int i = 0;i<N;i++){
+    wn = (double) alpha*(1-cos(2*pi*i/N)); // window function
+    w.push_back(wn);
+    y.at(i) = y.at(i)*w.at(i);
+  }
 
 }
 
@@ -423,6 +423,10 @@ void AudioView::animateSpectrograph(std::string filename){
 void AudioView::resetSpectrograph(){
   cv::Mat resetMat;
 
+  spect.transform_count = 0;
+  spect.max_frequency = 0;
+  spect.max_magnitude = 0;
+  spect.data.clear();
   spect.dft_frequency = resetMat;
 }
 
