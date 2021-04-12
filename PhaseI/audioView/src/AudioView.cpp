@@ -434,6 +434,7 @@ std::vector<std::vector<float>> AudioView::getSpectralData(){
   std::vector<std::vector<float>> data;
   int rows = spect.dft_frequency.size().height;
   int cols = spect.dft_frequency.size().width;
+  std::cout << "[" << rows << ","  << cols << "]";
   data.resize(rows, std::vector<float>(cols,0));
 
   for(int r=0;r<rows;r++){
