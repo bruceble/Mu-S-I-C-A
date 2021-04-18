@@ -37,7 +37,7 @@ target_link_libraries(test
   ${Boost_LIBRARIES}
   ${COMPILER_SUPPORT_LIBRARIES}
   ${OpenMP_CXX_FLAGS}
-  #OpenMP::OpenMP_CXX
+  OpenMP::OpenMP_CXX
 )
 
 add_executable(CNN src/convolutionalNN.cpp)
@@ -47,5 +47,5 @@ target_link_libraries(CNN
   ${Boost_LIBRARIES}
   ${COMPILER_SUPPORT_LIBRARIES}
   ${OpenMP_CXX_FLAGS}
-  #OpenMP::OpenMP_CXX
+  OpenMP::OpenMP_CXX
 )
