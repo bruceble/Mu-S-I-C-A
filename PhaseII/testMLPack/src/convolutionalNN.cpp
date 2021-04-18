@@ -28,7 +28,7 @@ arma::Row<size_t> getLabels(arma::mat predOut)
 }
 
 int main(){
-
+    std::cout << "Building FNN - convolutional neural network" << std::endl;
     /* setup constant training parameters */
     constexpr double RATIO = 0.1; // train set to validation set
     constexpr int MAX_ITERATIONS = 0; // set to zero to allow infinite iterations.
@@ -155,7 +155,9 @@ int main(){
     model.Add<Dropout<>>(0.25);
 
     /* Flatten */
-    model.Add<Flatten<>>();
+    // model.Add<Flatten<>>(); // Not a layer in mlpack
+    model.Add<Subview<>>();
+
 
     /* First Dense */
     model.Add<Linear<>>(1824, 128);
