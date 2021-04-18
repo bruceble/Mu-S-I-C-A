@@ -243,10 +243,6 @@ void AudioView::colorize(){
       cv::Mat img_color;
       cv::Mat img_in = spect.dft_frequency;
 
-      for(int i = 0; i<spect_count; i++){
-        spect.dft_frequency.at<double>(i) = 255*spect.dft_frequency.at<double>(i)*spect.dft_frequency.at<double>(i)/spect.max_magnitude;
-      }
-
       img_in.convertTo(img_in, CV_8UC1); // (MATRIX, TARGET DATA TYPE)
       cv::applyColorMap(img_in, img_color, 9); // (ORIGINAL MATRIX, COLORED MATRIX, OPENCV COLOR OPTION)
       cv::namedWindow("Spectrograph", cv::WINDOW_NORMAL);
@@ -257,7 +253,7 @@ void AudioView::colorize(){
 }
 
 void AudioView::calculateSpectrograph(int windowSize){
-    int N = 512*2; // sample freq
+    int N = 513*2; // sample freq
     int segment_overlap = 192;
     std::vector<double> y = waveform.amplitude;
     std::vector<double> windowSamples;
@@ -296,10 +292,16 @@ void AudioView::calculateSpectrograph(int windowSize){
 
       t_idx++;
     } // end of transform count loop
+
+    // Finally, normalize for RGB values
+    for(int i = 0; i<spect_count; i++){
+      spect.dft_frequency.at<double>(i) = 255*spect.dft_frequency.at<double>(i)*spect.dft_frequency.at<double>(i)/spect.max_magnitude;
+    }
+
 }
 
 void AudioView::calculateSpectrograph(int windowSize, std::vector<double> mixedAmplitude){
-    int N = 512*2; // sample freq
+    int N = 513*2; // sample freq
     int segment_overlap = 192;
     std::vector<double> y = mixedAmplitude;
     std::vector<double> windowSamples;
@@ -338,6 +340,17 @@ void AudioView::calculateSpectrograph(int windowSize, std::vector<double> mixedA
 
       t_idx++;
     } // end of transform count loop
+
+
+    int dft_frequency_size = spect.dft_frequency.size().height * spect.dft_frequency.size().width;
+
+    for(int i = 0; i<dft_frequency_size; i++){
+      spect.dft_frequency.at<double>(i) = 255*spect.dft_frequency.at<double>(i)*spect.dft_frequency.at<double>(i)/spect.max_magnitude;
+      if(spect.dft_frequency.at<double>(i) > 256){
+        // std::cout << "You done messed up... " << spect.dft_frequency.at<double>(i) << std::endl;
+      }
+    }
+    // std::cout << "Normalized for RGB values" << std::endl;
 }
 
 void AudioView::displaySpectrograph(int windowSize){
@@ -365,7 +378,7 @@ void AudioView::animateSpectrograph(std::string filename){
   cv::Mat img_in = spect.dft_frequency;
   cv::Mat frame;
 
-  int frameHeight = 512;
+  int frameHeight = 513;
   int stride = frameHeight/16*9; // USE THIS FOR SLOWER VIEW
   stride = frameHeight*1280/720; // THIS FRAME SIZE WORKS WELL WITH SEEING BIG PICTURE AT REAL SPEED
 
@@ -422,23 +435,24 @@ void AudioView::animateSpectrograph(std::string filename){
 
 void AudioView::resetSpectrograph(){
   cv::Mat resetMat;
+  std::vector<TransformData> resetData;
 
   spect.transform_count = 0;
   spect.max_frequency = 0;
   spect.max_magnitude = 0;
-  spect.data.clear();
+  spect.data = resetData;
   spect.dft_frequency = resetMat;
 }
 
-std::vector<std::vector<float>> AudioView::getSpectralData(){
-  std::vector<std::vector<float>> data;
+std::vector<std::vector<int>> AudioView::getSpectralData(){
+  std::vector<std::vector<int>> data;
   int rows = spect.dft_frequency.size().height;
   int cols = spect.dft_frequency.size().width;
-  data.resize(rows, std::vector<float>(cols,0));
+  data.resize(rows, std::vector<int>(cols,0));
 
   for(int r=0;r<rows;r++){
     for(int c=0;c<cols;c++){
-      data[r][c] = spect.dft_frequency.at<double>(r,c);
+      data[r][c] = (int) spect.dft_frequency.at<double>(r,c);
     }
   }
   return data;
