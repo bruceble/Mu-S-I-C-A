@@ -112,5 +112,5 @@ class AudioView{
     void resetSpectrograph();
 
     /* Method to reformat and access spectral data */
-    std::vector<std::vector<float>> getSpectralData();
+    std::vector<std::vector<int>> getSpectralData();
 };
