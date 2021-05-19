@@ -66,17 +66,11 @@ Rather than implementing a DFT in code from scratch, the dft() function was used
 A spectrogram is a visual representation of how a signals frequency and phase characteristics change over time. This is performed mathematically by performing a series of DFTs in smaller time-steps along the duration of the signal rather than performing a single DFT over the entire signal (Fast Fourier Transform). The spectrogram constructed by iterating through an audio signal of a trombone playing a musical scale, and performing DFTs to extract frequency data. This data is then assigned RGB values based on the intensity (magnitude) of each frequency. The corresponding spectrogram is seen below in the Results section.
 
 ## Results
+#### Spectogram: Trombone b-flat scale 
 <img src="cpp_img.PNG">
 
 ### Hanning Window
 For more dynamic audio, a hanning window was applied to smoothen the frequency data and create a clearer spectogram image. 
-
-#### Spectogram without Hanning Window
-<img src="noHanns.png" height="150">
-
-#### Spectogram with Hanning Window
-<img src="Hanns.png" height="150">
-
 
 ```c
 /* Hanning Window Pseudocode */
@@ -88,5 +82,22 @@ for(i<N){
 }
 ```
 
+#### Spectogram without Hanning Window
+<img src="noHanns.png" height="150">
+
+#### Spectogram with Hanning Window
+<img src="Hanns.png" height="150">
+
+
 # Phase II
 ## Creating the Dataset
+For the Mu.S.I.C.A data set, I decided to implement a tree structure with linked lists to organize this data set. The tree structure organizes the audio data based on the filename of the vocal data used (and file size if the filenames match), and each vocal tree node would contain a linked-list of all the non-vocal audio data that respective audio was mixed with, organized by file size (and file name if sizes match). 
+<br/>
+For example, the tree node “A” represents a vocal audio file that starts with the letter a, and it has been mixed with non vocal files numbered 1, 2, 3, and 5.
+<img src="datastruct.png">
+As each vocal tree node was added to the tree, the STFT functionality created in Phase I was implemented and the corresponding frequency data was stored within the corresponding node. This process was repeated for each non-vocal linked-list node. Additionally, the vocal tree node also stored a binary value indicating whether or not a frequency bin contains vocal content (non-zero frequency magnitude). 
+
+## Dataset Format
+For each timestep of the mixed audio, a DFT was calculated for 513 different frequency bins. Furthermore, each DFT was grouped together in groups of 25 in order to retain temporal context. As a result, each individual sample set requires 12,825 (513x25) values. This will serve as the initial input for training a future maching learning model.
+
+Likewise, each time step of the vocal-only audio calculated DFT for the same amount of frequency bins. Rather than using the frequency for the dataset, the binary indicator for vocal content was used. For a given 25-frame mixed-audio set, the corresponding vocal-only binary set will contain (513x1) values representing the middle (12th) frame of the 25-grouped temporal context. 
