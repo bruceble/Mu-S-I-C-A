@@ -1,4 +1,4 @@
-## Project Overview
+### Project Overview
 
 The Musical Speech Isolation and Conversion Automation (Mu.S.I.C.A) Project spanned the winter and spring semesters of 2021. The Mu.S.I.C.A Project was a self-driven project to gain experience with C++ programming, explore interests in machine learning, and develop applied engineering skills. The objective of this project is to design a program that analyses musical audio and extracts frequency data in order to develop a dataset for vocal isolation. 
 
@@ -13,19 +13,31 @@ Project Primary Dependencies: <br/>
 - MatplotLib (C++)
 - OpenCV
 
-## Project Motivation
+### Project Motivation
 
 This project was inspired by my interest in the process of learning spoken language, the topic of translation technology, and my desire to improve my engineering and programming skills. Furthermore, this project expands upon work done for a Complex Leadership Challenges course where I researched and proposed a solution for a robust translation technology program. The goal of this project is to explore the broad topic of automatic speech recognition and get exposure to topics such as computational linguistics, feature extraction, ant machine learning. 
 
 In addition to multiple learning goals for technical skills, my goals for this experience also included embracing active learning, pushing my comfort zone, and developing strong reflection habits.
 
-## Project By-The-Numbers
+### Project By-The-Numbers
 | Project Phase | Duration |
 | ----------- |--------|
 | Phase 0: Winter C++ Bootcamp | 25+ hours |
 | Phase I: Testing and Visualization | 88 hours |
 | Phase II: Vocal-Isolation Dataset | 60 hours |
 | Concurrent Data Structures Course | 5-6 hours a week x 15 weeks|
+
+
+### Phase I
+## Read, Write, Play Audio
+## Visualize Musical Data (Time Domain)
+# Methodology
+
+## Visualize Musical Data (Frequency Domain)
+# Methodology
+
+### Phase II
+## Creating the Dataset
 
 
 
