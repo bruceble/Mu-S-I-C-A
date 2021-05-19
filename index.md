@@ -37,6 +37,8 @@ In addition to multiple learning goals for technical skills, my goals for this e
 
 ### Phase II
 ## Creating the Dataset
+![No hanning window](noHanns.png)
+![Hanning window](Hanns.png)
 
 
 
