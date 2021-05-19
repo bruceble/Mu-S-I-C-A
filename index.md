@@ -28,45 +28,41 @@ In addition to multiple learning goals for technical skills, my goals for this e
 
 ### Phase I
 ## Read, Write, Play Audio
-![](audf.png)
+![](audf.png) <br/>
+[Figure 1: Sampled Audio Data](https://www.izotope.com/en/learn/digital-audio-basics-sample-rate-and-bit-depth.html)<br/>
+In order to store audio (and ultimately read data), several parameters must be defined: 
+<br/>
+**Typical Sampling Rates**
+- 11 kHz
+- 22 kHz
+- 44 kHz
+
+**Typical Sample Data Types**
+- uint8/16/32
+- sint8/16/32
+
+For this project, .wav file sampling rate was 44kHz and data type was uint16.
+
 ## Visualize Musical Data (Time Domain)
 # Methodology
+# Results
 
 ## Visualize Musical Data (Frequency Domain)
 # Methodology
+# Results
+<img src="noHanns.png" height="150">
+<img src="Hanns.png" height="150">
+
+
+```c
+/* Hanning Window Pseudocode */
+double alpha = 0.5;
+double pi = 3.1415926;
+for(i<N){
+  w.at(i) = alpha*(1-cos(2*pi*i/N)); // window function
+  y.at(i) = y.at(i)*w.at(i);
+}
+```
 
 ### Phase II
 ## Creating the Dataset
-![No hanning window](noHanns.png)
-![Hanning window](Hanns.png)
-
-
-
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/bruceble/Mu.S.I.C.A./settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
