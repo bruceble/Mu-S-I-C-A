@@ -2,13 +2,20 @@
 
 This paper serves to summarize the work done during the winter and spring semester on the Musical Speech Isolation and Conversion Automation (Mu.S.I.C.A) Project as part of the Presidents Leadership Class Applied Leadership Experience (ALE). The Mu.S.I.C.A Project was a self-driven project to gain experience with C++ programming, explore interests in machine learning, and develop applied engineering skills. The objective of this project is to design a program that analyses musical audio and isolates vocal audio to act as an initial process for testing and improving automatic speech recognition that is applied to studio music.
 
-### Project Motivation
+## Project Motivation
 
 This project was inspired by my interest in the process of learning spoken language, the topic of translation technology, and my desire to improve my engineering and programming skills. Furthermore, this project expands upon work done in the Fall semester as part of the Complex Leadership Challenges course (ENLP 3100) where I researched and proposed a solution for a robust translation technology program. The goal of this project is to explore the broad topic of automatic speech recognition and get exposure to topics such as computational linguistics, feature extraction, ant machine learning. 
 
 Prior to beginning this project, I had experience with programming for numerical and engineering applications with MATLAB. I did not have any programming experience with object-oriented language or experience with Linux based systems, and as a result this project served as an opportunity to expand my technical skills with C++ Programming. In order to achieve baseline success, this required undertaking a self-driven coding bootcamp to learn my selected programming language (C++) as well as enrolling in a university course on Data structures. This project also benefited from my academic experience using Fourier analyses which will be discussed in more detail later.
 
 In addition to multiple learning goals for technical skills, my goals for this experience also included embracing active learning, pushing my comfort zone, and developing strong reflection habits.
+
+## Project By-The-Numbers
+25+ hours (Winter Preparation)
+88 hours (Tracked for 8 weeks from January 16 - March 8)  
+59.5 (Estimated remaining hours averaging 8-9 hours a week)
+5-6 hours a week (Learning hours from 15-week course work for CSCI 2270)
+
 
 
 ```markdown
