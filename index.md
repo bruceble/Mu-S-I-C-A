@@ -11,10 +11,10 @@ Prior to beginning this project, I had experience with programming for numerical
 In addition to multiple learning goals for technical skills, my goals for this experience also included embracing active learning, pushing my comfort zone, and developing strong reflection habits.
 
 ## Project By-The-Numbers
-25+ hours (Winter Preparation)
-88 hours (Tracked for 8 weeks from January 16 - March 8)  
-59.5 (Estimated remaining hours averaging 8-9 hours a week)
-5-6 hours a week (Learning hours from 15-week course work for CSCI 2270)
+25+ hours (Winter Preparation) <br/>
+88 hours (Tracked for 8 weeks from January 16 - March 8) <br/>
+59.5 (Estimated remaining hours averaging 8-9 hours a week) <br/>
+5-6 hours a week (Learning hours from 15-week course work for CSCI 2270) <br/>
 
 
 
