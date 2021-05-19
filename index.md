@@ -1,4 +1,4 @@
-### Project Overview
+# Project Overview
 
 The Musical Speech Isolation and Conversion Automation (Mu.S.I.C.A) Project spanned the winter and spring semesters of 2021. The Mu.S.I.C.A Project was a self-driven project to gain experience with C++ programming, explore interests in machine learning, and develop applied engineering skills. The objective of this project is to design a program that analyses musical audio and extracts frequency data in order to develop a dataset for vocal isolation. 
 
@@ -13,20 +13,20 @@ Project Primary Dependencies: <br/>
 - MatplotLib (C++)
 - OpenCV
 
-### Project Motivation
+# Project Motivation
 
 This project was inspired by my interest in the process of learning spoken language, the topic of translation technology, and my desire to improve my engineering and programming skills. Furthermore, this project expands upon work done for a Complex Leadership Challenges course where I researched and proposed a solution for a robust translation technology program. The goal of this project is to explore the broad topic of automatic speech recognition and get exposure to topics such as computational linguistics, feature extraction, ant machine learning. 
 
 In addition to multiple learning goals for technical skills, my goals for this experience also included embracing active learning, pushing my comfort zone, and developing strong reflection habits.
 
-### Project By-The-Numbers
+# Project By-The-Numbers
 **Phase 0: Winter C++ Bootcamp:** 25+ hours <br/>
 **Phase I: Testing and Visualization**:88 hours <br/>
 **Phase II: Vocal-Isolation Dataset**:60 hours <br/>
 **Concurrent Data Structures Course**:5-6 hours a week x 15 weeks <br/>
 
 
-### Phase I
+# Phase I
 ## Read, Write, Play Audio
 ![](audf.png) <br/>
 [Figure 1: Sampled Audio Data](https://www.izotope.com/en/learn/digital-audio-basics-sample-rate-and-bit-depth.html)<br/>
@@ -43,13 +43,17 @@ In order to store audio (and ultimately read data), several parameters must be d
 
 For this project, .wav file sampling rate was 44kHz and data type was uint16.
 
-## Visualize Musical Data (Time Domain)
-# Methodology
-# Results
+# Visualize Musical Data (Time Domain)
+## Methodology
+Visualizing the time domain waveform primarily serves to verify that the read-in audio data appears as it was expected and can be modified. The waveforms could be compared to audio programs such as Audacity.
+After considering several plotting options for C++, the library chosen was [matplotlib-cpp](https://github.com/lava/matplotlib-cpp). 
+Given the disproportionality between the number of audio samples and the amplitude of the audio data, the full waveform typically would appear a flat line. In order to visualize audio data with better amplitude resolution, a segmented waveform was defined by a smaller length of data samples. The segment's amplitude was also halved to verify that the audio could be modified in code. Then an animated plot that traversed through the waveform with a closer viewing window. A snapshot of the animated audio waveform graph can be seen below in the Results section. 
+## Results
+![](plotlib.png)
 
-## Visualize Musical Data (Frequency Domain)
-# Methodology
-# Results
+# Visualize Musical Data (Frequency Domain)
+## Methodology
+## Results
 <img src="noHanns.png" height="150">
 <img src="Hanns.png" height="150">
 
@@ -64,5 +68,5 @@ for(i<N){
 }
 ```
 
-### Phase II
+# Phase II
 ## Creating the Dataset
