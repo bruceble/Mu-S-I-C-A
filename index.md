@@ -53,8 +53,28 @@ Given the disproportionality between the number of audio samples and the amplitu
 
 # Visualize Musical Data (Frequency Domain)
 ## Methodology
+### Discrete Fourier Transform
+The fourier transform is a mathematical analysis of time-varying spectral characteristics and its application ranges from speech to music to seismology.
+<br/>
+<img src="https://render.githubusercontent.com/render/math?math=X(k)= \sum_{t=0}^{n-1}x(t)e^{-2 \pi i t k / n}">
+<br/>
+For the purpose of this project, x(t) represents the audio signal level at a given point in time: t. X(k) represents the audio signal level at a given frequency: k.  
+<br/>
+Rather than implementing a DFT in code from scratch, the dft() function was used from the OpenCV library. 
+
+### Constructing a Spectogram (STFT)
+A spectrogram is a visual representation of how a signals frequency and phase characteristics change over time. This is performed mathematically by performing a series of DFTs in smaller time-steps along the duration of the signal rather than performing a single DFT over the entire signal (Fast Fourier Transform). The spectrogram constructed by iterating through an audio signal of a trombone playing a musical scale, and performing DFTs to extract frequency data. This data is then assigned RGB values based on the intensity (magnitude) of each frequency. The corresponding spectrogram is seen below in the Results section.
+
 ## Results
+<img src="cpp_img.PNG">
+
+### Hanning Window
+For more dynamic audio, a hanning window was applied to smoothen the frequency data and create a clearer spectogram image. 
+
+#### Spectogram without Hanning Window
 <img src="noHanns.png" height="150">
+
+#### Spectogram with Hanning Window
 <img src="Hanns.png" height="150">
 
 
