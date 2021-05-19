@@ -1,6 +1,11 @@
-## Brief Overview
+## Project Overview
 
-This paper serves to summarize the work done during the winter and spring semester on the Musical Speech Isolation and Conversion Automation (Mu.S.I.C.A) Project as part of the Presidents Leadership Class Applied Leadership Experience (ALE). The Mu.S.I.C.A Project was a self-driven project to gain experience with C++ programming, explore interests in machine learning, and develop applied engineering skills. The objective of this project is to design a program that analyses musical audio and isolates vocal audio to act as an initial process for testing and improving automatic speech recognition that is applied to studio music.
+The Musical Speech Isolation and Conversion Automation (Mu.S.I.C.A) Project spanned the winter and spring semesters of 2021. The Mu.S.I.C.A Project was a self-driven project to gain experience with C++ programming, explore interests in machine learning, and develop applied engineering skills. The objective of this project is to design a program that analyses musical audio and extracts frequency data in order to develop a dataset for vocal isolation. 
+
+This project completes three primary tasks: <br/>
+1. Read (Write, and Play) music .wav files
+2. Extract music frequency data and construct spectrograms
+3. Create musical dataset for vocal and non vocal audio frequency data
 
 ## Project Motivation
 
