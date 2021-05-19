@@ -20,6 +20,10 @@ This project was inspired by my interest in the process of learning spoken langu
 In addition to multiple learning goals for technical skills, my goals for this experience also included embracing active learning, pushing my comfort zone, and developing strong reflection habits.
 
 ## Project By-The-Numbers
+| Time Period | Duration |
+| ----------- |:--------:|
+| Winter C++ Bootcamp | 25+ hours |
+
 25+ hours (Winter Preparation) <br/>
 88 hours (Tracked for 8 weeks from January 16 - March 8) <br/>
 59.5 (Estimated remaining hours averaging 8-9 hours a week) <br/>
