@@ -21,7 +21,6 @@ In addition to multiple learning goals for technical skills, my goals for this e
 
 ### Project By-The-Numbers
 | Project Phase | Duration |
-| ----------- |--------|
 | Phase 0: Winter C++ Bootcamp | 25+ hours |
 | Phase I: Testing and Visualization | 88 hours |
 | Phase II: Vocal-Isolation Dataset | 60 hours |
