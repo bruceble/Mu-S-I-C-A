@@ -20,11 +20,10 @@ This project was inspired by my interest in the process of learning spoken langu
 In addition to multiple learning goals for technical skills, my goals for this experience also included embracing active learning, pushing my comfort zone, and developing strong reflection habits.
 
 ### Project By-The-Numbers
-| Project Phase | Duration |
-| Phase 0: Winter C++ Bootcamp | 25+ hours |
-| Phase I: Testing and Visualization | 88 hours |
-| Phase II: Vocal-Isolation Dataset | 60 hours |
-| Concurrent Data Structures Course | 5-6 hours a week x 15 weeks|
+**Phase 0: Winter C++ Bootcamp:** 25+ hours |
+**Phase I: Testing and Visualization**:88 hours |
+**Phase II: Vocal-Isolation Dataset**:60 hours |
+**Concurrent Data Structures Course**:5-6 hours a week x 15 weeks|
 
 
 ### Phase I
