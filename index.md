@@ -112,6 +112,6 @@ Likewise, each time step of the vocal-only audio calculated DFT for the same amo
 
 # Project By-The-Numbers
 **Phase 0: Winter C++ Bootcamp:** 25+ hours <br/>
-**Phase I: Testing and Visualization**:88 hours <br/>
-**Phase II: Vocal-Isolation Dataset**:60 hours <br/>
-**Concurrent Data Structures Course**:5-6 hours a week x 15 weeks <br/>
+**Phase I: Testing and Visualization:** 88 hours <br/>
+**Phase II: Vocal-Isolation Dataset:** 60 hours <br/>
+**Concurrent Data Structures Course:** 5-6 hours a week x 15 weeks <br/>
