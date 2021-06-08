@@ -28,7 +28,7 @@ In addition to multiple learning goals for technical skills, my goals for this e
 The purpose of Phase I was to collect raw data and perform data preparation methods in order to satisfy a predifined machine-learning model for vocal-isolation. The following sections describe key functionalities needed to collect and prepare adequate data. 
 
 ## Raw Data Collection
-The initial data was obtained from downloaded music from youtube. The raw data was targeted to meet one of the following two criteria:
+The initial data was obtained from downloaded music from YouTube. The raw data was targeted to meet one of the following two criteria:
 - Non-Vocal (i.e. instrumental audio)
 - Vocal (i.e. acapella) 
 <br>
