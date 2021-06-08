@@ -4,7 +4,7 @@ The Musical Speech Isolation and Conversion Automation (Mu.S.I.C.A) Project span
 
 This dataset is being created in order to address the following question: <br>
 
-  ***Can audio data be used to reconstruct a song in a new language?***
+  ***Can audio data be used to predictively reconstruct a song in a new language?***
 <br>
 
 This project completes three primary tasks: <br/>
