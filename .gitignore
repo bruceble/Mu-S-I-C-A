@@ -1,5 +1,5 @@
 # ignore build dir
 PhaseI/audioView/build/
-PhaseII/testMLPack/build/
-PhaseII/testMLPack/data/
+PhaseIII/testMLPack/build/
+PhaseIII/testMLPack/data/
 PhaseI/opencv_example/build/
