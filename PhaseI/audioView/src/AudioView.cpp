@@ -293,9 +293,10 @@ void AudioView::calculateSpectrograph(int windowSize){
       t_idx++;
     } // end of transform count loop
 
+    std::cout << "Max freq: " << spect.max_frequency << std::endl;
     // Finally, normalize for RGB values
     for(int i = 0; i<spect_count; i++){
-      spect.dft_frequency.at<double>(i) = 255*spect.dft_frequency.at<double>(i)*spect.dft_frequency.at<double>(i)/spect.max_magnitude;
+      spect.dft_frequency.at<double>(i) = 255*spect.dft_frequency.at<double>(i)*spect.dft_frequency.at<double>(i)/spect.max_magnitude/spect.max_magnitude;
     }
 
 }
@@ -345,7 +346,7 @@ void AudioView::calculateSpectrograph(int windowSize, std::vector<double> mixedA
     int dft_frequency_size = spect.dft_frequency.size().height * spect.dft_frequency.size().width;
 
     for(int i = 0; i<dft_frequency_size; i++){
-      spect.dft_frequency.at<double>(i) = 255*spect.dft_frequency.at<double>(i)*spect.dft_frequency.at<double>(i)/spect.max_magnitude;
+      spect.dft_frequency.at<double>(i) = 255*spect.dft_frequency.at<double>(i)*spect.dft_frequency.at<double>(i)/spect.max_magnitude/spect.max_magnitude;
       if(spect.dft_frequency.at<double>(i) > 256){
         // std::cout << "You done messed up... " << spect.dft_frequency.at<double>(i) << std::endl;
       }

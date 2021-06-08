@@ -99,116 +99,115 @@ int main(){
 
     Sequential<> module;
 
-      // module.Add<IdentityLayer<>>();
+    module.Add<IdentityLayer<>>();
 
-      /* First Convolution Layer */
-      module.Add<Convolution<>>(1,   // Number of input activation maps.
-                               32,  // Number of output activation maps.
-                               3,   // Filter width.
-                               3,   // Filter height.
-                               1,   // Stride along width.
-                               1,   // Stride along height.
-                               0,   // Padding width.
-                               0,   // Padding height.
-                               513, // Input width.
-                               25   // Input height.
-      );
+    /* First Convolution Layer */
+    module.Add<Convolution<>>(1,   // Number of input activation maps.
+                             32,  // Number of output activation maps.
+                             3,   // Filter width.
+                             3,   // Filter height.
+                             1,   // Stride along width.
+                             1,   // Stride along height.
+                             0,   // Padding width.
+                             0,   // Padding height.
+                             513, // Input width.
+                             25   // Input height.
+    );
 
-      /* First ReLU */
-      module.Add<LeakyReLU<>>();
+    /* First ReLU */
+    module.Add<LeakyReLU<>>();
 
-      // module.Add<IdentityLayer<>>();
+    module.Add<IdentityLayer<>>();
 
-      /* Second Convolution Layer */
-      module.Add<Convolution<>>(32,   // Number of input activation maps.
-                               16,  // Number of output activation maps.
-                               3,   // Filter width.
-                               3,   // Filter height.
-                               1,   // Stride along width.
-                               1,   // Stride along height.
-                               0,   // Padding width.
-                               0,   // Padding height.
-                               513, // Input width.
-                               25   // Input height.
-      );
+    /* Second Convolution Layer */
+    module.Add<Convolution<>>(32,   // Number of input activation maps.
+                             16,  // Number of output activation maps.
+                             3,   // Filter width.
+                             3,   // Filter height.
+                             1,   // Stride along width.
+                             1,   // Stride along height.
+                             0,   // Padding width.
+                             0,   // Padding height.
+                             513, // Input width.
+                             25   // Input height.
+    );
 
-      /* Second ReLU */
-      module.Add<LeakyReLU<>>();
+    /* Second ReLU */
+    module.Add<LeakyReLU<>>();
 
-      /* First Max Pooling */
-      module.Add<MaxPooling<>>(3, 3, 3, 3, true);
+    /* First Max Pooling */
+    module.Add<MaxPooling<>>(3, 3, 3, 3, true);
 
-      /* Dropout */
-      module.Add<Dropout<>>(0.25);
+    /* Dropout */
+    module.Add<Dropout<>>(0.25);
 
-      // module.Add<IdentityLayer<>>();
+    module.Add<IdentityLayer<>>();
 
-      /* Third Convolution Layer */
-      module.Add<Convolution<>>(16,   // Number of input activation maps.
-                               64,  // Number of output activation maps.
-                               3,   // Filter width.
-                               3,   // Filter height.
-                               1,   // Stride along width.
-                               1,   // Stride along height.
-                               0,   // Padding width.
-                               0,   // Padding height.
-                               171, // Input width.
-                               8    // Input height.
-      );
+    /* Third Convolution Layer */
+    module.Add<Convolution<>>(16,   // Number of input activation maps.
+                             64,  // Number of output activation maps.
+                             3,   // Filter width.
+                             3,   // Filter height.
+                             1,   // Stride along width.
+                             1,   // Stride along height.
+                             0,   // Padding width.
+                             0,   // Padding height.
+                             171, // Input width.
+                             8    // Input height.
+    );
 
-      /* Third  ReLU */
-      module.Add<LeakyReLU<>>();
+    /* Third  ReLU */
+    module.Add<LeakyReLU<>>();
 
-      // module.Add<IdentityLayer<>>();
+    module.Add<IdentityLayer<>>();
 
-      /* Fourth Convolution Layer */
-      module.Add<Convolution<>>(64,   // Number of input activation maps.
-                               16,  // Number of output activation maps.
-                               3,   // Filter width.
-                               3,   // Filter height.
-                               1,   // Stride along width.
-                               1,   // Stride along height.
-                               0,   // Padding width.
-                               0,   // Padding height.
-                               171, // Input width.
-                               8    // Input height.
-      );
+    /* Fourth Convolution Layer */
+    module.Add<Convolution<>>(64,   // Number of input activation maps.
+                             16,  // Number of output activation maps.
+                             3,   // Filter width.
+                             3,   // Filter height.
+                             1,   // Stride along width.
+                             1,   // Stride along height.
+                             0,   // Padding width.
+                             0,   // Padding height.
+                             171, // Input width.
+                             8    // Input height.
+    );
 
-      /* Fourth  ReLU */
-      module.Add<LeakyReLU<>>();
+    /* Fourth  ReLU */
+    module.Add<LeakyReLU<>>();
 
-      /* Second Max Pooling */
-      module.Add<MaxPooling<>>(3, 3, 3, 3, true);
+    /* Second Max Pooling */
+    module.Add<MaxPooling<>>(3, 3, 3, 3, true);
 
-      /* Dropout */
-      module.Add<Dropout<>>(0.25);
+    /* Dropout */
+    module.Add<Dropout<>>(0.25);
 
-      /* Flatten */
-      // model.Add<Flatten<>>(); // Not a layer in mlpack
-      module.Add<Subview<>>();
+    /* Flatten */
+    // model.Add<Flatten<>>(); // Not a layer in mlpack
+    module.Add<Subview<>>();
 
 
-      /* First Dense */
-      module.Add<Linear<>>(1824, 128);
+    /* First Dense */
+    module.Add<Linear<>>(1824, 128);
 
-      /* Fifth LeakyReLU */
-      module.Add<LeakyReLU<>>();
+    /* Fifth LeakyReLU */
+    module.Add<LeakyReLU<>>();
 
-      /* Dropout */
-      module.Add<Dropout<>>(0.5);
+    /* Dropout */
+    module.Add<Dropout<>>(0.5);
 
-      /* Final Dense */
-      module.Add<Linear<>>(128, 513);
-      module.Add<LogSoftMax<>>(); // RM -> seg fault still happens
+    /* Final Dense */
+    module.Add<Linear<>>(128, 513);
+    module.Add<LogSoftMax<>>(); // RM -> seg fault still happens
+
+
 
 
     // Specify the NN model. NegativeLogLikelihood is the output layer that
     // is used for classification problem. RandomInitialization means that
     // initial weights are generated randomly in the interval from -1 to 1.
     FFN<NegativeLogLikelihood<>, RandomInitialization> model;
-    
-    model.Add<IdentityLayer<>>();
-    model.Add<Sequential<>>(module);
 
     /* regression-classification model to classify pizels as either vocal or non-vocal */
     // Layers schema source: https://towardsdatascience.com/audio-ai-isolating-vocals-from-stereo-music-using-convolutional-neural-networks-210532383785
@@ -272,19 +271,19 @@ int main(){
         true);
 
     model.Train(trainX,
-            trainY // ,
-            // optimizer,
-            // ens::PrintLoss(),
-            // ens::ProgressBar(),
-            // // Stop the training using Early Stop at min loss.
-            // ens::EarlyStopAtMinLoss(
-            //     [&](const arma::mat& /* param */)
-            //     {
-            //       double validationLoss = model.Evaluate(validX, validY);
-            //       std::cout << "Validation loss: " << validationLoss
-            //           << "." << std::endl;
-            //       return validationLoss;
-            //     })
+            trainY,
+            optimizer,
+            ens::PrintLoss(),
+            ens::ProgressBar(),
+            // Stop the training using Early Stop at min loss.
+            ens::EarlyStopAtMinLoss(
+                [&](const arma::mat& /* param */)
+                {
+                  double validationLoss = model.Evaluate(validX, validY);
+                  std::cout << "Validation loss: " << validationLoss
+                      << "." << std::endl;
+                  return validationLoss;
+                })
           );
 
 
