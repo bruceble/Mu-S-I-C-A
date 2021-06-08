@@ -24,7 +24,7 @@ This project was inspired by my interest in the process of learning spoken langu
 
 In addition to multiple learning goals for technical skills, my goals for this experience also included embracing active learning, pushing my comfort zone, and developing strong reflection habits.
 
-# Phase I: Data Collection and Data Preparation
+# Phase I: Data Collection and Data Preparation ([View Code](https://github.com/bruceble/Mu.S.I.C.A./tree/main/PhaseI))
 The purpose of Phase I was to collect raw data and perform data preparation methods in order to satisfy a predifined machine-learning model for vocal-isolation. The following sections describe key functionalities needed to collect and prepare adequate data. 
 
 ## Raw Data Collection
@@ -93,7 +93,7 @@ for(i<N){
 <img src="Hanns.png" height="150">
 
 
-# Phase II
+# Phase II: "VIsoMod" ([View Code](https://github.com/bruceble/VIsoMod))
 The purpose of Phase II was to organize and store data for future projects. The following sections describe the method used for creating the dataset and the format of the dataset. 
 
 ## Creating the Dataset
